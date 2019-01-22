@@ -1,9 +1,5 @@
 // Define the URLs
-var platesURL = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json"
-var quakeURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson"
-
-var earthquakes = new L.layerGroup()
-var plates = new L.layerGroup();
+var quakeURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson";
 
 // Define a function that will run once per earthquake (object) in the response.features array
 function createFeatures(earthquakeData) {
@@ -58,44 +54,17 @@ function createFeatures(earthquakeData) {
     console.log(earthquakeMarkers);
 
     // (3) Create an earthquake layerGroup containing the objects in the features array
-    earthquakes = L.layerGroup(earthquakeMarkers);
-    
-    // Perform a request to get the information from the plates URL (JSON format)
-d3.json(platesURL, function(error, data){
-    if (error) throw error;
-
-    // Send the data.features (array) to the createBoundaries function
-    var boundaryData = data.features;
-    // createBoundaries(boundaryData);
-
-    var latlon = [];
-
-    // (2) Loop through the boundaryData array
-    for (var j = 0; j < boundaryData.length; j ++) {
-        latlon.push(boundaryData[j].geometry.coordinates);
-    };
-    console.log(latlon);
-
-    var plateBoundaries = L.polyline(latlon, {
-        color: "red"
-    });
-
-    plates = L.layerGroup(plateBoundaries);
-
-    console.log(plateBoundaries);
-    return plates;
-});
+    var earthquakes = L.layerGroup(earthquakeMarkers);
 
     // Send the earthquakes layer to the createMap function
-    createMap(earthquakes, plates);
+    createMap(earthquakes);
 };
 
 
 
 // Define a function that creates a map
-function createMap(earthquakes, plates) {
+function createMap(earthquakes) {
     console.log(earthquakes);
-    console.log(plates);
     
     // Define a street layer and a satellite layer
     var streetMap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
@@ -128,8 +97,7 @@ function createMap(earthquakes, plates) {
 
     // Create an overlayMap that contains the earthquake geoJSON layer
     var overlayMap = {
-        "Earthquakes Today": earthquakes,
-        "Tectonic Plates": plates
+        "Earthquakes Today": earthquakes
     };
 
     // Create the map, centred somewhere near 20ºN and 10ºE
@@ -139,7 +107,7 @@ function createMap(earthquakes, plates) {
     var map = L.map("map", {
         center: MapCoords,
         zoom: mapZoomLevel,
-        layers: [satelliteMap, darkMap, streetMap, earthquakes,plates]
+        layers: [satelliteMap, darkMap, streetMap, earthquakes]
     });
 
     // Create a layer control to pass the baseMap and the overlayMap and add it to the map
