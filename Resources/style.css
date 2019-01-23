@@ -8,11 +8,22 @@ body,
 
 .info-legend {
   background-color: transparent;
-  border-color: black;
-  border-radius: 5px;
+  color: black;
+}
+
+
+#legend-title {
   color: white;
 }
 
-p {
-  color: black;
+.btn {
+  border-color: black;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: slategrey;
 }
