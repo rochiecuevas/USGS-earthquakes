@@ -22,6 +22,8 @@ body,
   color: white;
   border-radius: 5px;
   text-decoration: none;
+  display: inline-block;
+  width: 100px;
 }
 
 .btn:hover {
@@ -31,4 +33,25 @@ body,
 #hero {
   height: 100vh;
   width: 100vw;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("earthquake.jpg");
+  background-size: cover;
+  background-repeat: no-repeat; 
 }
+
+#hero-text {
+  color: white;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+}
+
+#hero-text h1 {
+  font-size: 3.5em;
+}
+
+a:link {
+  color: cyan;
+  font-weight: bold;
+}
+
+
