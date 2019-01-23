@@ -8,12 +8,15 @@ body,
 
 .info-legend {
   background-color: transparent;
-  color: black;
+  line-height: 18px;
+  color: white;
 }
 
-
-#legend-title {
-  color: white;
+.info-legend j {
+  width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
 }
 
 .btn {
@@ -49,7 +52,7 @@ body,
   font-size: 3.5em;
 }
 
-a:link {
+#hero a:link {
   color: cyan;
   font-weight: bold;
 }

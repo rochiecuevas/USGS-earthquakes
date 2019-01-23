@@ -11,22 +11,22 @@ function createFeatures(earthquakeData) {
 
     // (2) Create a function that will be used to colour the circleMarkers
     function customColor(radius) {
-        if (radius < 2) {
+        if (radius <= 2) {
             return "#ffffb2"
         } 
-        else if (radius < 4) {
+        else if (radius <= 4) {
             return "#fed976"
         }
-        else if (radius < 5) {
+        else if (radius <= 5) {
             return "#feb24c"
         }
-        else if (radius < 6) {
+        else if (radius <= 6) {
             return "#fd8d3c"
         }
-        else if (radius < 7) {
+        else if (radius <= 7) {
             return "#fc4e2a"
         }
-        else if (radius < 8) {
+        else if (radius <= 8) {
             return "#e31a1c"
         }
         else {
@@ -115,25 +115,24 @@ function createMap(earthquakes) {
     control.addTo(map);
 
     // Create a legend
+    // Resource: https://stackoverflow.com/a/31044581
     var legend = L.control({position: "bottomright"});
     legend.onAdd = function() {
         var div = L.DomUtil.create("div", "info-legend");
-        var categories = ["<2", "4", "5", "6", "7", "8", ">9"]
-        var colors = ["#ffffb2", "#fed976", "#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c", "#b10026"];
-        var labels = [];
+        var categories = ["1–2", "2–4", "4–5", "5–6", "6–7", "7–8", "<8"]
+        var colours = ["#ffffb2", "#fed976", "#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c", "#b10026"];
+        var labels = ['<strong>Magnitude:</strong>'];
 
-    var legendInfo = "<p id = 'legend-title'><b>Legend</b>: <br> Earthquake Magnitude</p>";
-    
-    div.innerHTML = legendInfo;
+        // Loop through the categories and place a square on the left for each category
+        for (var j = 0; j < categories.length; j++) {
+            div.innerHTML += labels.push(
+                '<j style = "background:' + colours[j] + '"></j>' + categories[j]
+            );
+        };
+        div.innerHTML = labels.join('<br>')
 
-    categories.forEach(function(cat, index) {
-        labels.push("<span style = \"background-color: " + colors[index] + "\">" + " " + cat + " " + "</span>");
-    });
-
-    div.innerHTML += "<p style = 'text-align: center;'>" + labels.join(" ") + "</p>";
-
-    return div;
-    }
+        return div;
+    };
 
     legend.addTo(map);
 
