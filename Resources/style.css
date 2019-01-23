@@ -37,9 +37,9 @@ body,
   height: 100vh;
   width: 100vw;
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("earthquake.jpg");
-  background-size: cover;
-  background-repeat: no-repeat; 
-  background-attachment: fixed;
+  background-size: cover; /* cover entire hero screen */
+  background-repeat: no-repeat; /* prevent tiling */
+  background-attachment: fixed; /* hero image doesn't move */
 }
 
 #hero-text {
