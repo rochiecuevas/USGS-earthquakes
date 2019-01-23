@@ -60,8 +60,6 @@ function createFeatures(earthquakeData) {
     createMap(earthquakes);
 };
 
-
-
 // Define a function that creates a map
 function createMap(earthquakes) {
     console.log(earthquakes);
@@ -93,7 +91,7 @@ function createMap(earthquakes) {
         "Street Map": streetMap,
         "Satellite Map": satelliteMap,
         "Dark Map": darkMap
-    }
+    };
 
     // Create an overlayMap that contains the earthquake geoJSON layer
     var overlayMap = {
@@ -124,7 +122,7 @@ function createMap(earthquakes) {
         var colors = ["#ffffb2", "#fed976", "#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c", "#b10026"];
         var labels = [];
 
-    var legendInfo = "<h4>Legend: <br> Earthquake Magnitude</h4>";
+    var legendInfo = "<p id = 'legend-title'><b>Legend</b>: <br> Earthquake Magnitude</p>";
     
     div.innerHTML = legendInfo;
 
@@ -151,3 +149,5 @@ d3.json(quakeURL, function(error, response){
     var earthquakeData = response.features
     createFeatures(earthquakeData); // response.features = earthquakeData
 });
+
+    
