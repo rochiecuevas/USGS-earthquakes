@@ -1,11 +1,11 @@
 # 24-hour Earthquake Monitoring
 ![cracked-road](https://github.com/rochiecuevas/USGS-earthquakes/blob/master/Resources/earthquake.jpg)
 
-            "I can feel the earth move under my feet"
+            "I can feel the earth move under my feet."
 
-    – Carole King
+                                        – Carole King
 
-Not all earthquakes are preceptible to people, though. Which is why it is a good thing that the United States Geological Survey (USGS) has been established to monitor geological hazards... like earthquakes.
+Not all earthquakes are preceptible to people, though. Which is why it is a good thing that the United States Geological Survey (USGS) has been established to monitor geological hazards at a worldwide scale... like earthquakes.
 
 The USGS Earthquake Hazards Programme provides real-time data about earthquakes. __Today's Earthquakes__ maps the [earthquake data](https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson) collected by the USGS for the past 24 hours (updated every five minutes), and provides their magnitudes, significance, and depths.
 
