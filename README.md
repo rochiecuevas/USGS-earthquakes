@@ -7,8 +7,8 @@ The map has three tile layers corresponding to different ways to view terrain an
 
 The legend is set from 1 to >8 as this is the range of [earthquake magnitudes](https://www.britannica.com/science/earthquake-geology/Earthquake-magnitude). The legend and the circles are colour-coded based on the magnitude of each earthquake. Also, the size of the circles are based on the earthquakes they represent.
 
-__Today's Earthquakes__ opens with introductory text explaining the contents of the map. It has a "Start" button that the reader can click to direct him/her to the latest version of the map.
+__Today's Earthquakes__ opens with introductory text explaining the contents of the map. It also features an image of a road cracked during an earthquake. The image was obtained from a [Loop T&T](http://www.looptt.com/content/10-worst-earthquakes-tt) news article; however, no attribution information is included in the article.
 
 ![hero-section](https://github.com/rochiecuevas/USGS-earthquakes/blob/master/Screenshots/hero_section.png)
 
-__Today's Earthquakes__, like the USGS data, is updated every five minutes. To see today's
+__Today's Earthquakes__, like the USGS data, is updated every five minutes. To see the earthquakes from the past 24 hours, just click "Start". To see the nuts and bolts that were used to build the map, head over to the [project's wiki page](https://github.com/rochiecuevas/USGS-earthquakes/wiki).
