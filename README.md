@@ -1,1 +1,2 @@
-# USGS Earthquake
+# 24-hour Earthquake Monitoring
+The United States Geological Survey (USGS) Earthquake Hazards Programme provides real-time data about earthquakes. __Today's Earthquakes__ maps the [[earthquake data](https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson) collected by the USGS for the past 24 hours (updated every five minutes), and provides their magnitudes, significance, and depths.
