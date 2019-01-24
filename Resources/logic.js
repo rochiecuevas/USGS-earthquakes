@@ -1,4 +1,4 @@
-// Define the URLs
+// Define the USGS earthquake data URL
 var quakeURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson";
 
 // Define a function that will run once per earthquake (object) in the response.features array
